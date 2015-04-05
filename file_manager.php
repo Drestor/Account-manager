@@ -140,16 +140,27 @@
 	
 if(isset($_POST['nyit'])){
 		
-    $file="files/".$_POST["files2"];
+	$open=$_POST["files2"];
+    $file="files/".$open;
     $handle = fopen($file, 'r');
     $data = fread($handle,filesize($file)); 
-    echo "<form action=''  method='post'>";
+    echo "<form action='?p=edit_file'  method='post'>";
+	echo "<input type='hidden'	name='edit_file' value='" . $open . "'>";
 	echo "<div align='center'>";
     echo "<textarea name='file_text' rows='40' cols='140' id='elm1'>".$data."</textarea><br>";
     echo "<br>";
     echo "<input class=button type=submit name=szerk value=Szerkeszt><br></form>";
     echo "</form>";
 	echo "</div>";
+	
+	echo "<div align='right'>";
+	echo "<form action='?p=search_infile' method='POST'>";
+	echo "<input type='hidden'	name='edit_file' value='" . $open . "'>";
+	echo "<input name='search' type='text' id='search' value=''>";
+	echo "<input type='submit' name='keres' value='Keresés'>";
+	echo "</form>";
+	echo "</div>";
+	
     } else {
 	
 ?>	
