@@ -138,17 +138,19 @@
 
 <?php
 	
-
-	if(isset($_POST['nyit'])){
+if(isset($_POST['nyit'])){
 		
-    $file=files.'/'.$_POST["files"];
+    $file="files/".$_POST["files2"];
     $handle = fopen($file, 'r');
     $data = fread($handle,filesize($file)); 
     echo "<form action=''  method='post'>";
- echo "<textarea name='file_text' rows='10' cols='40' id='elm1'>".$data."</textarea><br>";
- echo "<input class=button type=submit name=send value=send><br></form>";
-
-    }
+	echo "<div align='center'>";
+    echo "<textarea name='file_text' rows='40' cols='140' id='elm1'>".$data."</textarea><br>";
+    echo "<br>";
+    echo "<input class=button type=submit name=szerk value=Szerkeszt><br></form>";
+    echo "</form>";
+	echo "</div>";
+    } else {
 	
 ?>	
 	
@@ -157,7 +159,7 @@
 <?php
 
 echo "<div class='dropdown dropdown-dark'>";
-echo "<select name='files' class='dropdown-select'>";
+echo "<select name='files2' class='dropdown-select'>";
 $files = array_map("htmlspecialchars", scandir("files"));
 foreach ($files as $file)
     echo "<option value='$file'>$file</option>";
@@ -169,4 +171,9 @@ echo "</div>";
 <br>
 <input type="submit" name="nyit" value="Szerkeszt!" />
 </form>
+<?php
+
+};
+
+?>
 </div>

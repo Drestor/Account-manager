@@ -33,16 +33,13 @@
 	<td>
 	
 	
-		<!--  start step-holder -->
 		<div id="step-holder">
 			<div class="step-no">1</div>
 			<div class="step-dark-left"><a href="">Hozzáad</a></div>
 			<div class="step-dark-right">&nbsp;</div>
 			<div class="clear"></div>
 		</div>
-		<!--  end step-holder -->
-	
-		<!-- start id-form -->
+
 		<form method="POST" action="?p=add_user">
 		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
 		<tr>
@@ -101,7 +98,6 @@
 	</tr>
 	</table>
 	</form>
-	<!-- end id-form  -->
 
 	</td>
 	<td>
@@ -119,5 +115,4 @@
  
 
 </div>
-<!--  end content-table-inner  -->
 </td>

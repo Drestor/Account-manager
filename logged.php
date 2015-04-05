@@ -7,11 +7,14 @@ require_once("include/header.php");
 
 session_start();
 
+//Átirányítás a kezdőoldalra ha nincs bejelentkezve
 if( !isset($_SESSION['log']) || ($_SESSION['log'] != 'in') ){
 	echo "Kérem jelentkezzen be hogy hozzáférhessen az oldalhoz. <a href=index.php>Vissza a bejelentkezéshez.</a>";
         
 	exit();
 }
+
+//Kijelentkezés
 if(isset($_GET['log']) && ($_GET['log']=='out')){
 	session_destroy();
 	header('location:index.php');
@@ -190,7 +193,6 @@ $(document).pngFix( );
 <div class="nav-outer-repeat"> 
 <div class="nav-outer"> 
 
-		<!-- start nav-right -->
 		<div id="nav-right">
 		
 			<div class="nav-divider">&nbsp;</div>
@@ -199,7 +201,6 @@ $(document).pngFix( );
 			<a href="?log=out" id="logout"><img src="images/shared/nav/nav_logout.gif" width="64" height="14" alt="" /></a>
 			<div class="clear">&nbsp;</div>
 		
-			<!--  start account-content -->	
 			<div class="account-content">
 			<div class="account-drop-inner">
 				<a href="?p=admins" id="acc-settings">Adminok</a>

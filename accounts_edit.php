@@ -47,16 +47,13 @@
 	<td>
 	
 	
-		<!--  start step-holder -->
 		<div id="step-holder">
 			<div class="step-no">1</div>
 			<div class="step-dark-left"><a href="">Szerkesztés</a></div>
 			<div class="step-dark-right">&nbsp;</div>
 			<div class="clear"></div>
 		</div>
-		<!--  end step-holder -->
 	
-		<!-- start id-form -->
 		<form method="POST" action="?p=accounts_edit">
 		<input type="hidden" name="old_password" value="<?php echo $results['password']; ?>">
 		<input type="hidden" name="username" value="<?php echo $results['username']; ?>">
@@ -112,7 +109,6 @@
 	</tr>
 	</table>
 	</form>
-	<!-- end id-form  -->
 
 	</td>
 	<td>
@@ -130,5 +126,4 @@
  
 
 </div>
-<!--  end content-table-inner  -->
 </td>
